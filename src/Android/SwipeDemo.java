@@ -19,24 +19,26 @@ public class SwipeDemo extends Base {
 		
 		AndroidDriver<AndroidElement> driver=Capabilities();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		
 		driver.findElementByAndroidUIAutomator("text(\"Views\")").click();
+		
+		
 		driver.findElement(By.xpath("//android.widget.TextView[@text='Date Widgets']")).click();
 		driver.findElementByAndroidUIAutomator("text(\"2. Inline\")").click();
-		driver.findElementByXPath("//*[@content-desc='9']").click();
 		
+		
+	driver.findElement(By.xpath("//*[@content-desc='9']")).click();
+	//driver.findElementByAndroidUIAutomator("content-desc(\"9\")").click();
 		
 		TouchAction t=new TouchAction(driver);
+		
 		WebElement source=driver.findElementByXPath("//*[@content-desc='15']");
-		WebElement dest=driver.findElementByXPath("//*[@content-desc='45']");
-		t.longPress(longPressOptions().withElement(element(source)).withDuration(ofSeconds(2))).moveTo(element(dest)).release().perform();
+		WebElement destination=driver.findElementByXPath("//*[@content-desc='45']");
+		
+		
+		t.longPress(longPressOptions().withElement(element(source)).withDuration(ofSeconds(2))).moveTo(element(destination)).release().perform();
 		
 		
 		
-		
-		
-		
-			
 	}
 
 }
