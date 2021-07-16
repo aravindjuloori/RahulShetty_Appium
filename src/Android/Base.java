@@ -16,8 +16,8 @@ public class Base {
 	public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
 		
 		File f=new File("src");
-		File fs=new File(f,"ApiDemos-debug.apk");
-		//File fs=new File(f,"General-Store.apk");
+		//File fs=new File(f,"ApiDemos-debug.apk");
+		File fs=new File(f,"General-Store.apk");
 		DesiredCapabilities cap=new DesiredCapabilities();
 		//cap.setCapability(MobileCapabilityType.DEVICE_NAME,"AndroidEmulator");
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME,"Android Device");
